@@ -1,0 +1,41 @@
+#Install the required libraries:
+	Open a terminal(WIN KEY +R cmd Enter) and run the following command to install the google-cloud-bigquery library:
+
+	pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client; pip install google-cloud-bigquery; pip install time; pip install twilio
+
+#Replace the placeholders in the script with your own values.
+	Open the file with a note editor or any editor u have installed .
+	change these :
+	line 23 : Replace YOUR_API_KEY and YOUR_API_SECRET with your Twilio API key and secret, which you can find in the Twilio Console.
+	line 31 : Replace YOUR_WHATSAPP_PHONE_NUMBER with your WhatsApp sandbox phone number, which you can find in the Twilio Console.
+	line 94 : Replace the phone numbers and table names in the table_mapping dictionary with your own values.Each phone is associated to the Project.analytics.intraday_ of each client ,if a client has two numbers , write the first one with the table and the second on with the same table , you can add as many as you want .
+	for test purposes just put ur number to receive the info then change it later when the script is fully functional.
+
+	line 101 : Replace The project IDs and give each project a path to the json file to the service account key file that you downloaded,You can download this file from the Google Cloud Console under the "IAM & Admin" section, each project should have it s json file , the path is something like this c:/users/thefile.json
+	
+	Line 118 : after you tested the script , remove the # the line should look like this time.sleep(86400) without the # , this line makes your script run every single day automatically.
+
+#Save the script and run it.
+	Save the script to a file, for example bot2.py.
+	Open a terminal and navigate to the directory where you saved the script.
+	Run the script using the following command:
+
+	python bot2.py
+
+	The script will execute and send WhatsApp messages to the clients based on the data in the BigQuery tables.
+	Any errors that occur will be logged
+
+#Potential Errors .
+	If you receive an error message saying that a module or class is not found, make sure that you have installed the required libraries .
+
+	If you receive an error message saying that the service account key file cannot be found, make sure that you have replaced path_to_key_file.json with the correct path to the file on your computer.
+
+	If you receive an error message saying that the BigQuery client cannot be authenticated or authorized, make sure that you have replaced YOUR_PROJECT_ID with the correct ID of your Google Cloud project, and that the service account has the necessary permissions to access the BigQuery API.
+
+	If you receive an error message saying that the Twilio client cannot be authenticated or authorized, make sure that you have replaced YOUR_API_KEY and YOUR_API_SECRET with the correct values from your Twilio account.
+
+	If you receive an error message saying that the phone numbers or tables are not found, make sure that you have replaced the placeholders in the table_mapping dictionary with the correct phone numbers and table names.
+
+	If you receive an error message saying that the message cannot be sent, make sure that you have replaced YOUR_WHATSAPP_PHONE_NUMBER with the correct WhatsApp sandbox phone number from your Twilio account.
+
+I hope this helps! Let me know if you have any more questions or need further assistance.
